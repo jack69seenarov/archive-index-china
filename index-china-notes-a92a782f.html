@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 索引与资料整理站</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f4f5f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2b3c;
+            line-height: 1.6;
+            padding: 2rem 1.5rem 3rem;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        /* hero 区域 */
+        .hero {
+            margin-bottom: 2.8rem;
+            text-align: center;
+            padding: 3.2rem 1.8rem 2.4rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #243342;
+            margin-bottom: 0.6rem;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #5e6e7e;
+            max-width: 640px;
+            margin: 0.4rem auto 0;
+            border-top: 1px solid #d9dee3;
+            padding-top: 1rem;
+        }
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e7ed;
+            border-radius: 18px;
+            box-shadow: 0 8px 18px -6px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 12px 24px -10px rgba(0,0,0,0.07);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1b2b3a;
+            border-left: 4px solid #8ba0b5;
+            padding-left: 1rem;
+        }
+        .card p, .card li {
+            color: #2f4052;
+            font-size: 0.98rem;
+            margin-bottom: 0.7rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.65rem;
+        }
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #7f96ab;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-top: 0.4rem;
+        }
+        .flex-row .col {
+            flex: 1 1 200px;
+            min-width: 160px;
+        }
+        .flex-row .col strong {
+            display: block;
+            font-weight: 500;
+            color: #1c3142;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+        .tag-sm {
+            display: inline-block;
+            background: #ecf0f4;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            color: #2e4a5e;
+            margin-right: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #e7ecf1;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #1b2c3d;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item .a {
+            color: #4a5d6e;
+            font-size: 0.92rem;
+        }
+        .footnote {
+            margin-top: 2.2rem;
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
+            color: #556b7a;
+            font-size: 0.9rem;
+            border-top: 1px solid #dbe1e8;
+        }
+        .footnote a {
+            color: #1d4e6b;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .footnote a:hover {
+            border-bottom-color: #1d4e6b;
+        }
+        .inline-link {
+            color: #1d4e6b;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid #cbd6e0;
+            transition: border-color 0.15s;
+        }
+        .inline-link:hover {
+            border-bottom-color: #1d4e6b;
+        }
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body { padding: 1.2rem 1rem 2rem; }
+            .hero h1 { font-size: 2rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            .flex-row { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>爱游戏 · 资料索引</h1>
+        <div class="sub">
+            围绕游戏信息、版本脉络与社区记录的一处整理节点。<br>
+            不赶热点，只做安静的存档与检索。
+        </div>
+    </div>
+
+    <!-- 优势区：信息整理的视角 -->
+    <div class="card">
+        <h2>为什么关注这个索引</h2>
+        <p>游戏行业发展迅速，资讯分散在论坛、社交平台、公告栏与个人博客中。<br>
+        从资料整理的习惯出发，<a href="https://index-china-igame.com" class="inline-link">爱游戏</a> 尝试把散落的线索按主题、时间与来源做一次轻量收束。这里不会出现实时排名或竞价信息，更像一个安静的阅览架。</p>
+        <div class="flex-row">
+            <div class="col">
+                <strong>按主题归类</strong>
+                <span class="tag-sm">版本记录</span>
+                <span class="tag-sm">运营备忘</span>
+                <span class="tag-sm">更新摘要</span>
+                <span class="tag-sm">社区讨论</span>
+            </div>
+            <div class="col">
+                <strong>来源标注</strong>
+                每一条记录都附带原始出处或参考链接，方便回溯。不修改原文语境，只做摘录和简要说明。
+            </div>
+            <div class="col">
+                <strong>定期校准</strong>
+                根据公开信息变化做修正，但不追求实时刷新。对停更或已失效的条目会保留注释。
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区：关于内容边界与选材 -->
+    <div class="card">
+        <h2>索引范围与选材原则</h2>
+        <p>索引主要覆盖中文游戏社区中具有一定讨论深度或时间跨度的内容。包括但不限于：</p>
+        <ul>
+            <li>游戏版本更迭与停运记录</li>
+            <li>运营策略调整的公开信或公告存档</li>
+            <li>玩家社群自发整理的攻略、年表与考据</li>
+            <li>开发者访谈、设计理念摘录（非商业转载）</li>
+        </ul>
+        <p style="margin-top:0.6rem">不收录未授权的第三方素材、外挂及私服信息，也不对游戏品质做主观评价。选材上尽可能保持中立与克制，保留原始表述。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2>常见问题 · 摘要</h2>
+        <div class="faq-item">
+            <div class="q">资料更新的频率如何？</div>
+            <div class="a">不定期更新。通常与公开事件（版本公告、周年节点、停服通知）同步，无固定周期。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">可以提交遗漏的内容或修正错误吗？</div>
+            <div class="a">欢迎通过站点提供的反馈渠道（邮件或议题页面）提交补充信息。核实后会标注贡献者并更新条目。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">索引中的链接跳转到哪里？</div>
+            <div class="a">多数指向原始公告、论坛帖子、维基存档或新闻页面。部分链接为永久存档副本，会注明“存档页”。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">为什么叫「爱游戏」？</div>
+            <div class="a">这个名称源自站点最初定位：以资料整理的方式表达对游戏文化的关注。与任何商业品牌或运营方无关。</div>
+        </div>
+    </div>
+
+    <!-- 底部与链接 -->
+    <div class="footnote">
+        <p style="margin-bottom:0.6rem">
+            持续梳理中 · <a href="https://index-china-igame.com">爱游戏</a> · 索引站
+        </p>
+        <p style="font-size:0.82rem; color:#6d8295;">
+            内容仅供个人学习与资料查阅，不构成投资或消费建议。<br>
+            所有商标与版权归各自所有者所有。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
