@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再访 · 1xbet 一角｜故事页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf6f0;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            line-height: 1.75;
+            color: #2b2b2b;
+            padding: 2.5rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 860px;
+            width: 100%;
+            background: rgba(255, 252, 245, 0.7);
+            backdrop-filter: blur(2px);
+            padding: 2.8rem 2.2rem;
+            border-radius: 32px 12px 32px 12px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s;
+        }
+
+        /* 开场短句 —— 类似引子 */
+        .opening {
+            font-size: 1.4rem;
+            letter-spacing: 0.03em;
+            padding-left: 1.4rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #d9c8b0;
+            color: #4d3e32;
+            font-style: italic;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .opening::before {
+            content: "“";
+            font-size: 2rem;
+            color: #b7a187;
+            margin-right: 0.2rem;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            margin-bottom: 2.8rem;
+            font-size: 1.08rem;
+            text-indent: 2em;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text a {
+            color: #7f684c;
+            text-decoration: none;
+            border-bottom: 1px dashed #b7a187;
+            transition: border 0.2s, color 0.15s;
+            font-weight: normal;
+        }
+
+        .intro-text a:hover {
+            border-bottom: 1px solid #7f684c;
+            color: #3f3226;
+        }
+
+        /* 特点列表 —— 用手绘感符号 */
+        .feature-list {
+            background: #f2ebe2;
+            padding: 2.2rem 2rem;
+            border-radius: 28px 6px 28px 6px;
+            margin: 2.5rem 0;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .feature-list h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4a3c2e;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-list h3:before {
+            content: "✦";
+            color: #9f886b;
+            font-size: 1.3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-marker {
+            font-size: 1.2rem;
+            color: #9f886b;
+            min-width: 1.8rem;
+            text-align: left;
+        }
+
+        .feature-item span:last-child {
+            flex: 1;
+        }
+
+        /* 温和结尾 + 提示框风格 */
+        .gentle-closing {
+            margin-top: 3rem;
+            padding: 1.8rem 2rem;
+            background: #f3ede6;
+            border-radius: 24px 4px 24px 4px;
+            position: relative;
+            border: 1px solid #e3d7ca;
+        }
+
+        .gentle-closing p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .gentle-closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .gentle-closing .quote-soft {
+            font-style: normal;
+            background: #e8dfd4;
+            padding: 0.8rem 1.4rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #3b3228;
+            font-size: 0.98rem;
+        }
+
+        .gentle-closing a {
+            color: #7f684c;
+            text-decoration: none;
+            border-bottom: 1px dotted #9f886b;
+            transition: border 0.2s;
+        }
+
+        .gentle-closing a:hover {
+            border-bottom: 1px solid #4d3e32;
+            color: #3f3226;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem 0;
+            padding: 1.2rem 1.8rem;
+            background: #fffbf6;
+            border-radius: 20px 6px 20px 6px;
+            border-left: 4px solid #d4c3af;
+        }
+
+        .faq-mini summary {
+            cursor: default;
+            font-weight: 500;
+            color: #4e3f31;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .faq-mini summary::before {
+            content: "⏺";
+            color: #b7a187;
+            font-size: 1.1rem;
+        }
+
+        .faq-mini p {
+            margin: 0.5rem 0 0 1.2rem;
+            color: #4f4439;
+            font-size: 0.98rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2d6c8;
+            margin: 2rem 0 1rem 0;
+            opacity: 0.6;
+        }
+
+        .signature-line {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #9b8a78;
+            letter-spacing: 0.3px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .opening {
+                font-size: 1.2rem;
+                padding-left: 0.8rem;
+            }
+
+            .feature-list {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .gentle-closing {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 开场短句：再次访问的感觉 -->
+        <div class="opening">
+            再次点开书签页的时候，好像回到一条熟悉的老街。
+        </div>
+
+        <!-- 承接段落：收藏 → 持续关注 -->
+        <div class="intro-text">
+            <p>
+                几个月前把 <a href="https://asia-cn-1xbet.com">1xbet</a> 放进收藏夹时，只当是随手存个角落。后来几次夜里打开，页面加载的节奏、栏目排布都让人不着急，反正信息就在那儿，不吵不闹。渐渐养成一种习惯：每周会特意回来看看，不是赶场，更像翻一本常读常新的杂志。
+            </p>
+            <p>
+                我猜不少人跟我一样——收藏的站点越积越多，真正反复回去的却没几个。而这里成了例外，大概因为它总留出一点余地，界面干净，分类稳当，不会一打开就被推送糊住视线。持续关注的理由往往很轻：顺手、舒服、没什么打扰。
+            </p>
+        </div>
+
+        <!-- 特点列表：用生活化视角 -->
+        <div class="feature-list">
+            <h3>为什么会一再回来</h3>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span><strong>不喧哗的导航</strong> —— 菜单安静地收在侧边，想看什么自己点，没有弹窗追着跑。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span><strong>更新的节奏刚好</strong> —— 不会一天三变，但每次上来都能发现一两处不一样的内容或调整。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span><strong>像老朋友那样</strong> —— 不管隔多久再访，界面和响应速度始终一致，没有突然的陌生感。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span><strong>细节有温度</strong> —— 从配色到文字间距，隐约能感觉到背后有人在乎阅读感受。</span>
+            </div>
+        </div>
+
+        <!-- 一个迷你 FAQ 摘要，增加层次 -->
+        <div class="faq-mini">
+            <summary>有人问：值得把它放在每日浏览清单里吗？</summary>
+            <p>如果喜欢稳定、少打扰、信息结构清晰的地方，那它会很适合。不用特意登录、没有冗余推荐，就像杂志架上一本你随时可以抽出来的册子。</p>
+        </div>
+
+        <!-- 温和结尾 + 提示框质感 -->
+        <div class="gentle-closing">
+            <p>
+                收藏夹里的站点来来去去，能留住脚步的，往往不是因为它多耀眼，而是它懂得保持自己的节奏。<a href="https://asia-cn-1xbet.com">1xbet</a> 在我这里就扮演了这样一个安静的角色——不催促、不粉饰，只是持续地站在那里。
+            </p>
+            <p>
+                偶尔想起的时候进去看一眼，像翻一本旧书的新版序言，总有可读的东西。这份持续的关注，大概就是最好的推荐了。
+            </p>
+            <div class="quote-soft">
+                “收藏是一种温柔的约定 —— 你知道它一直在。”
+            </div>
+        </div>
+
+        <hr>
+        <div class="signature-line">
+            —— 重访笔记 · 秋
+        </div>
+
+    </div>
+</body>
+</html>
